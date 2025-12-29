@@ -2,7 +2,10 @@
 set hidden true
 set icons true
 set drawbox true
+# --- ANTEPRIME GRAFICHE (SIXEL) ---
+set sixel true
 set previewer ~/.config/lf/pv.sh
+set cleaner ~/.config/lf/clean.sh
 
 # Mapping manager
 map <enter> open
