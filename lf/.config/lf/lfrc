@@ -93,4 +93,12 @@ map X chmod_x
 # X (Shift+x)	Exec	Fa chmod +x sul file corrente (ottimo per gli script).
 # P	PDF Conv	(Già fatto) Converte DOCX in PDF.
 
+# Apri le immagini con imv
+# Il trucco `imv "$f" *` o simile serve per caricare tutti i file della cartella
+# ma imv è intelligente: `imv dir/` apre la cartella.
+# Per semplicità, usiamo xdg-open che configureremo sotto, oppure comando diretto:
+
+cmd open_image ${{
+    imv -n $(basename "$f") . &
+}}
 
