@@ -24,3 +24,70 @@ cmd open ${{
 map W ${{
     swww img "$f" --transition-type fade --transition-duration 1
 }}
+
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+map <c-f> fzf_jump
+
+cmd bulk_rename ${{
+    vidir
+}}
+
+map R bulk_rename
+
+cmd trash ${{
+    files=$(printf "$fx" | tr '\n' ';')
+    while [ "$files" ]; do
+        file=${files%%;*}
+        trash-put "$(basename "$file")"
+        if [ "$files" = "$file" ]; then files=''; else files="${files#*; omit}"; fi
+    done
+}}
+map d trash
+map D delete # Il vecchio delete definitivo
+
+# Estrai (smart extract con atool)
+cmd extract ${{
+    atool -x "$f"
+}}
+map x extract
+
+# Comprimi selezione in zip
+cmd zip ${{
+    set -f
+    mkdir -p archives
+    zip -r "archives/archive-$(date +%s).zip" $fx
+}}
+map z zip
+
+cmd drag ${{
+    dragon -x -i -T "$f" &
+}}
+map w drag
+
+cmd chmod_x ${{
+    chmod +x "$f"
+    lf -remote "send $id reload"
+}}
+map X chmod_x
+
+# Tasto	Azione	Descrizione
+# Ctrl + f	FZF Search	Cerca file/cartelle scrivendo parte del nome e saltaci.
+# R (Shift+r)	Bulk Rename	Apre Helix. Cambia i nomi delle righe, salva, chiudi -> File rinominati.
+# d	Trash	Sposta nel cestino (puoi recuperare con trash-restore da terminale).
+# x	Estrai	Estrae .zip, .tar.gz, .rar automaticamente.
+# w	Drag	Crea un popup per trascinare il file nel browser/slack/email.
+# X (Shift+x)	Exec	Fa chmod +x sul file corrente (ottimo per gli script).
+# P	PDF Conv	(Già fatto) Converte DOCX in PDF.
+
+
