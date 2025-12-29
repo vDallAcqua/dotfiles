@@ -1,0 +1,26 @@
+# Basic options
+set hidden true
+set icons true
+set drawbox true
+set previewer ~/.config/lf/pv.sh
+
+# Mapping manager
+map <enter> open
+map e $$helix "$f"
+map n $$nvim "$f"
+
+map P ${{
+	notify-send "Start conversion" "Working on $f..."
+	libreoffice --headless --convert-to pdf "$f"
+	notify-send "End conversion" "Working on $f..."
+}}
+
+# Open command (xd-open per i file grafici)
+cmd open ${{
+		xdg-open "$f" >/dev/null 2>&1 &
+}}
+
+# Premi 'W' (maiuscolo) su un'immagine per impostarla come sfondo al volo
+map W ${{
+    swww img "$f" --transition-type fade --transition-duration 1
+}}

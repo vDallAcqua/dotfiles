@@ -1,0 +1,47 @@
+# Starlight Theme per Helix
+# Based on the custom palette defined for Ghostty/River
+
+"ui.background" = { bg = "#16161e" }
+"ui.virtual.whitespace" = { fg = "#3b4261" }
+"ui.menu" = { fg = "#c0caf5", bg = "#1f2335" }
+"ui.menu.selected" = { fg = "#16161e", bg = "#e0af68" } # Oro su selezione
+"ui.linenr" = { fg = "#3b4261" }
+"ui.linenr.selected" = { fg = "#e0af68" } # Numero riga corrente ORO
+"ui.popup" = { bg = "#1f2335" }
+"ui.window" = { fg = "#3b4261" }
+"ui.help" = { bg = "#1f2335", fg = "#c0caf5" }
+"ui.text" = { fg = "#c0caf5" }
+"ui.text.focus" = { fg = "#c0caf5" }
+"ui.selection" = { bg = "#33467C" } # Blu selezione Ghostty
+"ui.cursor" = { fg = "#16161e", bg = "#e0af68" }
+"ui.cursor.match" = { fg = "#e0af68", modifiers = ["bold"] }
+"ui.statusline" = { fg = "#a9b1d6", bg = "#16161e" }
+"ui.statusline.inactive" = { fg = "#3b4261", bg = "#16161e" }
+
+# Syntax Highlighting
+"comment" = { fg = "#565f89", modifiers = ["italic"] }
+"constant" = { fg = "#ff9e64" }
+"constant.numeric" = { fg = "#ff9e64" }
+"constant.character.escape" = { fg = "#bb9af7" }
+"string" = { fg = "#9ece6a" }
+"string.regexp" = { fg = "#bb9af7" }
+"attribute" = { fg = "#e0af68" } # Oro
+"type" = { fg = "#2ac3de" }
+"type.builtin" = { fg = "#2ac3de" }
+"constructor" = { fg = "#7aa2f7" }
+"variable" = { fg = "#c0caf5" }
+"variable.builtin" = { fg = "#ff9e64" }
+"variable.parameter" = { fg = "#e0af68" }
+"label" = { fg = "#7aa2f7" }
+"keyword" = { fg = "#bb9af7", modifiers = ["italic"] }
+"function" = { fg = "#7aa2f7", modifiers = ["bold"] }
+"function.builtin" = { fg = "#7aa2f7" }
+"tag" = { fg = "#f7768e" }
+"special" = { fg = "#bb9af7" }
+"operator" = { fg = "#89ddff" }
+
+[palette]
+# Non usata direttamente sopra, ma utile riferimento
+void = "#16161e"
+gold = "#e0af68"
+blue = "#7aa2f7"

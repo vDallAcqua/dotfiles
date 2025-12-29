@@ -1,0 +1,115 @@
+/* --- PALETTE STARLIGHT --- */
+@define-color bg-color #161126;      /* Deep Midnight */
+@define-color fg-color #ffffff;      /* Star White */
+@define-color active-color #f4f2bb;  /* Starlight Gold */
+@define-color inactive-color #5e7390;/* Nebula Grey */
+@define-color urgent-color #ff4f4f;  /* Red Giant */
+@define-color hover-color #353e4e;   /* Space Dust */
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @bg-color;
+    color: @fg-color;
+    transition-property: background-color;
+    transition-duration: .5s;
+    opacity: 0.95; /* Leggera trasparenza */
+}
+
+/* --- RIVER TAGS (Workspaces) --- */
+#tags button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: @inactive-color;
+    border-radius: 4px;
+    margin: 4px 2px;
+}
+
+/* Tag attivo (Selezionato) - Brilla come una stella */
+#tags button.focused {
+    background-color: @active-color;
+    color: @bg-color; /* Testo scuro su sfondo oro */
+    font-weight: bold;
+}
+
+/* Tag occupato (Finestre presenti) */
+#tags button.occupied {
+    color: #a0a0ff; /* Azzurrino */
+}
+
+#tags button:hover {
+    background: @hover-color;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#tags button.urgent {
+    background-color: @urgent-color;
+    color: white;
+}
+
+/* --- MODULI DI DESTRA --- */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode {
+    padding: 0 10px;
+    margin: 4px 4px;
+    background-color: #2b1e45; /* Sfondo modulo leggermente più chiaro */
+    color: #e0def4;
+    border-radius: 6px;
+}
+
+#clock {
+    background-color: transparent;
+    font-weight: bold;
+    color: @active-color; /* Oro */
+}
+
+#battery.charging, #battery.plugged {
+    color: #a6e3a1; /* Verde pastello */
+}
+
+#battery.critical:not(.charging) {
+    background-color: @urgent-color;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Animazione per batteria critica */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#custom-power {
+    background-color: @urgent-color; /* Rosso (#ff4f4f) */
+    color: #ffffff;
+    padding: 0 12px; /* Un po' più largo per essere cliccabile facilmente */
+    margin: 4px 4px;
+    border-radius: 6px;
+    font-size: 16px; /* Icona leggermente più grande */
+}
+
+#custom-power:hover {
+    background-color: #ff7878; /* Rosso più chiaro all'hover */
+    box-shadow: 0 0 5px #ff4f4f; /* Effetto glow */
+}

@@ -1,0 +1,12 @@
+fi=:di=:ln=:or=:ex=:
+*.cmd=:*.exe=:*.sh=:*.bash=:*.zsh=:
+*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:
+*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:
+*.pdf=:
+*.txt=:
+*.doc=:*.docx=:*.odt=:
+*.xls=:*.xlsx=:*.ods=:
+*.ppt=:*.pptx=:*.odp=:
+*.go=:*.php=:*.py=:*.js=:*.java=:*.rs=:*.c=:*.cpp=:*.h=:*.hpp=:*.html=:*.css=:*.scss=:
+*.yml=:*.yaml=:*.toml=:*.json=:*.xml=:*.conf=:*.ini=:
+*.gitignore=:*.gitmodules=:
